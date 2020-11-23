@@ -12445,7 +12445,9 @@ const gitPrRelease = __webpack_require__(531);
     assign, labels, template,
   });
 
-})().catch(e => console.log(e));
+})().catch(e => {
+  core.setFailed(e.message);
+});
 
 
 /***/ }),
@@ -13764,6 +13766,7 @@ exports.assemble = ({ template, pulls, checkedPrNums = {} }) => {
         number: pull.number,
         assignees: pull.assignees,
         user: pull.user,
+        content: pull.body,
         checked: checkedPrNums[pull.number],
       }
     })
