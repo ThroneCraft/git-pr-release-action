@@ -13773,7 +13773,7 @@ exports.assemble = ({ template, pulls, checkedPrNums = {} }) => {
   });
   const lines = text.split('\n');
   const title = lines[0];
-  const body = lines.slice(1);
+  const body = lines.slice(1).replace("&#x2F;", "/");
 
   return {
     title: title,
@@ -16667,7 +16667,7 @@ function onceStrict (fn) {
 /******/ },
 /******/ function(__webpack_require__) { // webpackRuntimeModules
 /******/ 	"use strict";
-/******/ 
+/******/
 /******/ 	/* webpack/runtime/node module decorator */
 /******/ 	!function() {
 /******/ 		__webpack_require__.nmd = function(module) {
@@ -16684,6 +16684,6 @@ function onceStrict (fn) {
 /******/ 			return module;
 /******/ 		};
 /******/ 	}();
-/******/ 	
+/******/
 /******/ }
 );
