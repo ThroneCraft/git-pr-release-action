@@ -13773,11 +13773,11 @@ exports.assemble = ({ template, pulls, checkedPrNums = {} }) => {
   });
   const lines = text.split('\n');
   const title = lines[0];
-  const body = lines.slice(1).replace("&#x2F;", "/");
+  const body = lines.slice(1);
 
   return {
     title: title,
-    body: body.join('\n')
+    body: body.join('\n').replace("&#x2F;", "/")
   };
 }
 
